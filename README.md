@@ -1,0 +1,2 @@
+# praia-cash
+auto-trading

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Relatório Semanal</h2>
+    <p><strong>Lucro Total:</strong> {{ total_profit }}</p>
+
+    <table>
+        <tr>
+            <th>Data</th>
+            <th>Ativo</th>
+            <th>Tipo</th>
+            <th>Preço</th>
+            <th>Lucro</th>
+        </tr>
+        {% for trade in trades %}
+        <tr>
+            <td>{{ trade["Data"] }}</td>
+            <td>{{ trade["Ativo"] }}</td>
+            <td>{{ trade["Tipo"] }}</td>
+            <td>{{ trade["Preço"] }}</td>
+            <td>{{ trade["Lucro"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
